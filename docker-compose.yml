@@ -19,5 +19,13 @@ services:
     depends_on:
       - mongo
 
+  frontend:
+    build: ./frontend/project-gc
+    container_name: frontend_gc
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
 volumes:
   mongo_data:
